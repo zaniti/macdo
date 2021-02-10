@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <script src="./scripts/translate.js" charset="utf-8"></script>
+    <script src="./scripts/functions.js" charset="utf-8"></script>
+  </head>
+  <style media="screen">
+    body{
+      display: flex;
+      flex-direction: column;
+      background-color: #EF3E42;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .header{
+      top: 0;
+      background-color: white;
+      text-align: center;
+      -webkit-box-shadow: 0px 4px 15px 1px rgba(0,0,0,0.44);
+      -moz-box-shadow: 0px 4px 15px 1px rgba(0,0,0,0.44);
+      box-shadow: 0px 4px 15px 1px rgba(0,0,0,0.44);
+    }
+    .divBtn{
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .startBtn{
+      background-color: #FEBF12;
+      border-radius: 50px;
+      border: none;
+      padding: 15px;
+      width: 400px;
+      color: white;
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .title{
+      color: white;
+      text-align: center;
+    }
+    a{
+      text-decoration:none;
+      text-align: center;
+    }
+    a:hover{
+      color: white;
+    }
+    .divcat{
+      height: 600px;
+      overflow: scroll;
+    }
+    button:focus {outline:0;}
+  </style>
+  <body onload="translate()">
+    <div class="row" id="start">
+    <div class="header row">
+      <div class="col m-3">
+        <img src="imgs/mcdo.png" alt="" width="100px">
+      </div>
+    </div>
+    <div class="row divBtn">
+      <a href="home.html#language">
+      <button type="button" name="button" class="startBtn lang" key="start">Start your order</button>
+      </a>
+    </div>
+    </div>
+
+    <div class="row" id="language">
+    <div class="row justify-content-end">
+      <a href="Home.html" name="button" class="startBtn m-4 lang" style="width:200px;font-size:30px;" key="cancel">Cancel</a>
+    </div>
+    <div class="row">
+      <h1 class="title lang" key="chooseLanguage">Choose your language</h1>
+    </div>
+    <div class="row divBtn">
+      <div class="col ">
+        <a href="#" onclick="getLang('en')">
+        <img src="imgs/eng.png" alt="" width="300px">
+        </a>
+      </div>
+      <div class="col">
+        <a href="#" onclick="getLang('fr')">
+        <img src="imgs/fr.png" alt="" width="300px">
+        </a>
+      </div>
+      <div class="col">
+        <img src="imgs/ar.png" alt="" width="300px">
+      </div>
+      <div class="col-12 justify-content-center">
+        <a class="btn btn-floating" style="background-color: #ffac44;font-size:20px;color:white" href="#inOrOut" role="button"><i class="fas fa-angle-down"></i></a>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="row" id="inOrOut">
+    <div class="row justify-content-end">
+      <a href="Home.html" name="button" class="startBtn m-4 lang" style="width:200px;font-size:30px;" key="cancel">Cancel</a>
+    </div>
+    <div class="row">
+      <h1 class="title lang" key="where">Where to eat?</h1>
+    </div>
+    <div class="row divBtn" id="location">
+      <div class="col">
+        <a href="#menu"><img src="imgs/eatin.png" alt="" width="300px">
+        <h2 class="title m-2 lang" key="in">eat in</h2></a>
+      </div>
+      <div class="col">
+        <a href="#menu"><img src="imgs/eatout.png" alt="" width="300px">
+        <h2 class="title m-2 lang" key="out">eat out</h2></a>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- select category -->
+
+    <div class="row text-center" style="background-color:white;" id="menu">
+      <div class="row justify-content-end">
+        <a href="Home.html" name="button" class="startBtn m-4 lang" style="width:200px;font-size:30px;" key="cancel">Cancel</a>
+      </div>
+      <h2>Categories</h2>
+      <div class="col-8 m-auto divcat">
+
+        <div class="row">
+
+        <div class="col">
+          <div class="foodCategory" id="categories">
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- select item -->
+
+    <div class="row text-center" style="background-color:white;" id="items">
+      <div class="row justify-content-end">
+        <a href="Home.html" name="button" class="startBtn m-4 lang" style="width:200px;font-size:30px;" key="cancel">Cancel</a>
+      </div>
+      <h2>Meals</h2>
+      <div class="col-8 m-auto divcat">
+
+        <div class="row">
+        <div class="col">
+          <div class="foodCategory" id="product">
+
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- checkout -->
+
+    <div class="row text-center" style="background-color:white;" id="checkout">
+      <div class="row justify-content-end">
+        <a href="Home.html" name="button" class="startBtn m-4 lang" style="width:200px;font-size:30px;" key="cancel">Cancel</a>
+      </div>
+
+      <div class="colm-auto divcat">
+
+        <div class="row">
+        <div class="col-6">
+          <h2>Your order</h2>
+          <div class="foodCategory"  id="oneProduct">
+            <img src="imgs/food/BigTasty.png" alt="" width="200px">
+            <h4>Big Tasty</h4>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row text-center mt-5">
+              <div class="col-2"><label for="">Quantity : </label></div>
+              <div class="col-2"><input type="number" id="quantity" class="form-control" value="1"></div>
+          </div>
+          <div class="row text-center mt-5">
+              <div class="col-2"><label for="">Table number: </label></div>
+              <div class="col-2"><select class="form-control" name="" id="ServTable">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+              </select></div>
+          </div>
+          <div class="row text-center mt-5">
+              <div class="col-2"><label for="">Promo <code></code> : </label></div>
+              <div class="col-4"><input type="text" id="codePromo" class="form-control" ><p id="promoValid"></p></div>
+              <div class="col"><button onclick="checkPromo()" class="btn btn-warning">Use</button></div>
+          </div>
+          <div class="row text-center mt-5">
+              <div class="col-2"><label for="">Fidelity card : </label></div>
+              <div class="col-4"><input type="text" id="carteF" class="form-control" ><p id="fideleValid"></p></div>
+              <div class="col"><button onclick="checkFidele()" class="btn btn-warning">Use</button></div>
+          </div>
+          <div class="row text-center mt-5">
+              <div class="col"><button onclick="checkOut()" class="btn btn-warning" data-mdb-toggle="modal"
+                  data-mdb-target="#exampleModal">Checkout</button></div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>

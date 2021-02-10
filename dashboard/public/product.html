@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <div class="table">
+        <div class="nav-bar">
+            <ul>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Sub-Category</a></li>
+                <li><a href="#">Log-out <i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </div>
+        <div>
+            <div><button class="add-btn">Add product</button></div>
+            <div>
+                <table id="myTable">
+                    <thead>
+                        <tr class="table-titles">
+                            <td>Product Name</td>
+                            <td>Image</td>
+                            <td>Price</td>
+                            <td>SubCategory</td>
+                            <td>Actions</td>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable__content">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <script src="javascripts/product.js"></script>
+</body>
+
+</html>
